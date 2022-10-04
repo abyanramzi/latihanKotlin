@@ -21,13 +21,7 @@ fun main () {
     }
     else {
         var lamaParkir3 = lamaParkir-24
-        if (lamaParkir3 >=1 && lamaParkir3 <=5){
-            var biayaParkir2 = (lamaParkir3 * tarifSatu).toFloat()
-        }
-        else if (lamaParkir3 >5 && lamaParkir3<=24){
-            var biayaParkir2 = ((5 * tarifSatu)+ lamaParkir3 * tarifDua).toFloat()
-        }
-        biayaParkir = ((5*tarifSatu)+(19*tarifDua)).toFloat()
+        biayaParkir = ((5*tarifSatu)+(19*tarifDua)+lamaParkir3 * tarifTiga).toFloat()
     }
     println("Lama Parkir : $lamaParkir")
     println("Biaya Parkir : $biayaParkir")
