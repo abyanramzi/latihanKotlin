@@ -9,7 +9,7 @@ fun main () {
     val tarifTiga = 15
 
     //Lama Parkir
-    lamaParkir = 26
+    lamaParkir = 50
 
     // Biaya Parkir
     if (lamaParkir >= 0 && lamaParkir<= 5){
@@ -20,8 +20,16 @@ fun main () {
         biayaParkir = ((5 * tarifSatu)+ lamaParkir2 * tarifDua).toFloat()
     }
     else {
-        var lamaParkir3 = lamaParkir-24
-        biayaParkir = ((5*tarifSatu)+(19*tarifDua)+lamaParkir3 * tarifTiga).toFloat()
+        if(lamaParkir%24 == 0){
+            val lamaParkir3 = lamaParkir/24
+            biayaParkir = (lamaParkir3*tarifTiga).toFloat()
+        }
+        else {
+            val lamaParkir3 = lamaParkir%24
+            val jumlahHari = (lamaParkir/24).toFloat()
+            biayaParkir = (lamaParkir3*tarifDua+(jumlahHari*15)).toFloat()
+            println(jumlahHari)
+        }
     }
     println("Lama Parkir : $lamaParkir")
     println("Biaya Parkir : $biayaParkir")
